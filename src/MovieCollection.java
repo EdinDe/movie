@@ -1,22 +1,33 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MovieCollection {
 
-    private Movie[] movies;
-    private int count = 0;
 
-    public MovieCollection(){
-        this.movies= new Movie[5];
+    private ArrayList <Movie> MovieCollection;
+
+    public MovieCollection() {
+        this.MovieCollection = new ArrayList<>();
     }
-    public void tilføjFilm (Movie movie){
-        movies[count] = movie;
-        count++;
 
-
+    public void addMovie(String name, String director, int year, int lenghtInMinutes, String genre, boolean isInColour){
+        MovieCollection.add(new Movie(name, director, year, lenghtInMinutes, genre, isInColour));
 
     }
 
+    public ArrayList<String> listOfMovieTitles(){
+        ArrayList<String> localListOfMovieTitles = new ArrayList<>();
+        for (int i = 0; i < MovieCollection.size(); i++){
+            localListOfMovieTitles.add(MovieCollection.get(i).getName());
+        }
+        return localListOfMovieTitles;
+    }
 
+    public void getList(){
+        for (Movie m : MovieCollection){
+            System.out.println(m.toString());
+        }
+    }
 
 
 

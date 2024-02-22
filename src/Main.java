@@ -1,15 +1,16 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+
+
         Scanner scanner = new Scanner(System.in);
-        int sentinental = 2;
+        int sentinel = 2;
         int tal = 0;
 
-        while (tal != sentinental) {
+        while (tal != sentinel) {
             System.out.println("Velkommen til min filmsamling");
             System.out.println("1. Opret en film");
             System.out.println("2. Afslut");
-            System.out.print("Vælg en handling: ");
             tal = scanner.nextInt();
             scanner.nextLine();
 
@@ -24,7 +25,9 @@ public class Main {
         System.out.println("Programmet afsluttet.");
         scanner.close();
     }
-        private static void nyFilm(Scanner scanner){
+
+    private static void nyFilm(Scanner scanner) {
+        controller nyFilm = new controller();
 
         System.out.println("Enter movie name:");
         String name = scanner.nextLine();
@@ -47,12 +50,19 @@ public class Main {
         boolean isInColour = scanner.nextBoolean();
         scanner.nextLine();
 
-        System.out.println("Film oprettet: " + name);
+
+        nyFilm.addMovie(name, director, year, lenghtInMinutes, genre, isInColour);
+
+        System.out.println("Film oprettet: ");
+
 
         System.out.println();
 
-
-
+        System.out.println(nyFilm.listOfMovieTitles());
+        nyFilm.getList();
 
     }
+
+
+
 }

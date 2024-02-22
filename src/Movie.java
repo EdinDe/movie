@@ -39,6 +39,20 @@ public class Movie {
         return isInColour;
     }
 
-
+    @Override
+    public String toString(){
+        String result = "";
+        result += "Title of movie: " + name + "\n"
+                +"who is the director: " + director + "\n"
+                + "Year it is from: " + year + "\n"
+                + "is the movie colored or not: " + isInColour + "\n"
+                + "How long is the movie in minutes: " + lenghtInMinutes + "\n"
+                + "what genre(s) is the movie: " + genre;
+        /*
+        if (isInColour) {
+            result +=" er i farve";
+        }*/
+        return result;
+    }
 
 }
