@@ -1,15 +1,14 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class controller {
 
-    MovieCollection instanceMovieCollection = new MovieCollection();
+    static MovieCollection instanceMovieCollection = new MovieCollection();
 
 
     public controller(){
 
     }
-    public void addMovie(String name, String director, int year, int lenghtInMinutes, String genre, boolean isInColour){
+    public static void addMovie(String name, String director, int year, int lenghtInMinutes, String genre, boolean isInColour){
         instanceMovieCollection.addMovie(name, director, year, lenghtInMinutes, genre, isInColour);
 
     }
@@ -22,6 +21,13 @@ public class controller {
     }
     public void getList(){
         instanceMovieCollection.getList();
+    }
+    public static String showMovieCollection(){
+       return instanceMovieCollection.showMovieCollection();
+    }
+
+    public ArrayList<Movie> searchMovie (String search){
+        return instanceMovieCollection.searchMovieTitle(search);
     }
 
 }

@@ -7,8 +7,6 @@ public class Movie {
     String genre;
     private boolean isInColour;
 
-
-
     public Movie(String name, String director, int year, int lenghtInMinutes, String genre, boolean isInColour) {
         this.name=name;
         this.director=director;
@@ -18,7 +16,6 @@ public class Movie {
         this.isInColour=isInColour;
 
     }
-
     public String getName(){
         return name;
     }
@@ -42,16 +39,18 @@ public class Movie {
     @Override
     public String toString(){
         String result = "";
-        result += "Title of movie: " + name + "\n"
-                +"who is the director: " + director + "\n"
-                + "Year it is from: " + year + "\n"
-                + "is the movie colored or not: " + isInColour + "\n"
-                + "How long is the movie in minutes: " + lenghtInMinutes + "\n"
-                + "what genre(s) is the movie: " + genre;
-        /*
-        if (isInColour) {
-            result +=" er i farve";
-        }*/
+        result += "Titel: " + name + "\nDirector: " + director + "\nYear: " + year + "\nColored: " + isInColour;
+
+
+/*
+        if (isInColour){
+            result+="ja";
+        }else {
+            result+="nej";
+        }
+*/
+        result+= "\nLength: " + lenghtInMinutes + " minutes " + "\nGenre: " + genre;
+
         return result;
     }
 
