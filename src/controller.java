@@ -26,7 +26,7 @@ public class controller {
        return instanceMovieCollection.showMovieCollection();
     }
 
-    public ArrayList<Movie> searchMovie (String search){
+    public static ArrayList<Movie> searchMovie(String search){
         return instanceMovieCollection.searchMovieTitle(search);
     }
 

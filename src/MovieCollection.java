@@ -44,7 +44,7 @@ public class MovieCollection {
         for (Movie mov : MovieCollection) {
             if (mov.getName().toLowerCase().contains(name.toLowerCase())) {
                 searchResult.add(mov);
-                //break;
+                //break; til at vise film enkeltvis
                 }
             }
             return searchResult;
