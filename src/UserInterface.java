@@ -3,11 +3,8 @@ import java.util.Scanner;
 
 public class UserInterface {
     controller film = new controller();
+
     Scanner scanner = new Scanner(System.in);
-
-    public UserInterface() {
-
-    }
 
     public void start() {
         int sentinel = 2;
@@ -23,7 +20,8 @@ public class UserInterface {
             System.out.println("\n1. Opret en film");
             System.out.println("2. Afslut");
             System.out.println("3. Vis min filmsamling");
-            System.out.println("4. Søg efter en film\n");
+            System.out.println("4. Søg efter en film");
+            System.out.println("5. Rediger film\n");
 
             tal = scanner.nextInt();
             scanner.nextLine();
@@ -37,31 +35,34 @@ public class UserInterface {
                 System.out.println(controller.showMovieCollection());
             } else if (tal == 4) {
                 searchMovie();
+            } else if (tal==5) {
+                editMovie();
+                
             }
         }
     }
 
     private void addMovie() {
-        System.out.println("Enter movie name:");
+        System.out.println("Angiv navnet på filmen:");
         String name = scanner.nextLine();
 
-        System.out.println("Enter directors name");
+        System.out.println("Angiv filminstruktørens navn");
         String director = scanner.nextLine();
 
-        System.out.println("Enter the year the movie was made");
+        System.out.println("Angiv det år filmen blev udgivet");
         int year = scanner.nextInt();
 
-        System.out.println("is it in colour");
+        System.out.println("Er filmen farvet eller ej");
         boolean isInColour = false;
         String colorOrNot = scanner.next().toLowerCase();
         if (colorOrNot.equals("ja")) {
             isInColour = true;
         }
 
-        System.out.println("Enter how long the movie is in minutes");
+        System.out.println("Angiv filmens spilletid");
         int lengthInMinutes = scanner.nextInt();
 
-        System.out.println("Enter the genre");
+        System.out.println("Angiv filmens genre");
         String genre = scanner.next();
 
         controller.addMovie(name, director, year, lengthInMinutes, genre, isInColour);
@@ -83,5 +84,42 @@ public class UserInterface {
         if (!fundet) {
             System.out.println("ingen film med det navn fundet");
         }
+        
     }
+    
+    public void editMovie() {
+        System.out.println("Hvilken film vil du redigere i?");
+        String name = scanner.nextLine();
+
+        System.out.println("Ny titel på filmen");
+        String newName = scanner.nextLine();
+
+        System.out.println("Ny filminstruktør");
+        String newDirector = scanner.nextLine();
+
+        System.out.println("Ny udgivelsesdato");
+        String newYear = scanner.nextLine();
+
+        System.out.println("Er filmen i farve?");
+        boolean newIsInColor = false;
+        String colorNot = scanner.next().toLowerCase();
+        if (colorNot.equals("ja")) {
+            newIsInColor = true;
+        }
+        scanner.nextLine();
+
+        System.out.println("Ny længde på filmen");
+        String newlenghtInMinutes = scanner.nextLine();
+
+        System.out.println("Ny genre");
+        String newGenre = scanner.nextLine();
+
+        film.editMovie(name, newName, newDirector, newYear, newIsInColor,
+                newlenghtInMinutes, newGenre);
+
+        System.out.println("Filem blev redigeret");
+
+    }
+
+
 }

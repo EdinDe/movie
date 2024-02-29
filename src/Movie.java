@@ -54,4 +54,29 @@ public class Movie {
         return result;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setLengthInMinutes(int lengthInMinutes) {
+        this.lenghtInMinutes = lengthInMinutes;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setInColor(boolean isInColour) {
+        this.isInColour = isInColour;
+    }
+
+
 }
