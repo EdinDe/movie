@@ -37,7 +37,7 @@ public class controller {
     public void editMovie(String name, String newName, String newDirector, String newYear, boolean newIsInColor, String newLengthInMinutes, String newGenre) {
         ArrayList<Movie> moviesToEdit = instanceMovieCollection.searchMovieTitle(name);
         if (!moviesToEdit.isEmpty()) {
-            Movie movieToEdit = moviesToEdit.get(0);
+            Movie movieToEdit = moviesToEdit.getFirst();
 
             movieToEdit.setName(newName);
             movieToEdit.setDirector(newDirector);
@@ -49,8 +49,4 @@ public class controller {
             System.out.println("Der blev ikke fundet en film med navnet " + name);
         }
     }
-
-
-
-
 }
