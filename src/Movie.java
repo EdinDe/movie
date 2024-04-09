@@ -1,4 +1,4 @@
-public class Movie {
+public class Movie implements Comparable<Movie> {
 
     String name;
     String director;
@@ -79,4 +79,8 @@ public class Movie {
     }
 
 
+    @Override
+    public int compareTo(Movie otherMovie) {
+        return this.getName().compareTo(otherMovie.getName());
+    }
 }

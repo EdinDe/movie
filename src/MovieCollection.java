@@ -1,7 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
+
 public class MovieCollection {
+    private List<Movie> movies;
 
 
     private ArrayList<Movie> MovieCollection;
@@ -15,6 +19,19 @@ public class MovieCollection {
         MovieCollection.add(new Movie(name, director, year, lenghtInMinutes, genre, isInColour));
 
     }
+
+    public void viewMovies() {
+        if (movies.isEmpty()) {
+            System.out.println("No movies in the collection.");
+        } else {
+            Collections.sort(movies); // Sort movies by name
+            for (Movie movie : movies) {
+                System.out.println(movie);
+            }
+        }
+    }
+
+
 
     public ArrayList<String> listOfMovieTitles() {
         ArrayList<String> localListOfMovieTitles = new ArrayList<>();
